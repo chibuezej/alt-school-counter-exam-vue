@@ -1,4 +1,5 @@
 # alt-school-third-semester
+A counter page using Vuex 
 
 ## Project setup
 ```
