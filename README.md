@@ -1,6 +1,10 @@
 # alt-school-third-semester
 A counter page using Vuex 
 
+# live site Vercal
+
+https://alt-school-counter-exam-vue.vercel.app/
+
 ## Project setup
 ```
 npm install

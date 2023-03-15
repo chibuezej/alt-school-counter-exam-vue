@@ -9,6 +9,11 @@
         Examination
         </h2>
         <hr />
+        <div class="getStarted">
+
+          <router-link to="/counter"><button>Go to Counter</button></router-link>
+       
+      </div>
       </div>
     </section>
   </div>
@@ -45,6 +50,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     color: #fff;
+   
     h4 {
       text-transform: uppercase;
       font-size: 22px;
@@ -66,6 +72,27 @@ export default {
       border: none;
       max-width: 85px;
       margin-top: 16px;
+    }
+  }
+}
+.getStarted{
+  display: flex;
+  text-align: center;
+  top: 0;
+
+  button{
+    font-size: 2rem;
+    width: 200px;
+    height: 80px;
+    border-radius: 50px;
+    margin: 30px 0px;
+    &:hover{
+      cursor: pointer;
+      background-color: #00afea;
+    }
+    @media (max-width: 1450px) {
+      width: 150px;
+    border-radius: 25px;
     }
   }
 }

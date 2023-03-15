@@ -78,6 +78,7 @@ position: fixed;
 transition: .5s ease all;
 color: #fff;
 
+
 nav {
   position: relative;
   display: flex;
