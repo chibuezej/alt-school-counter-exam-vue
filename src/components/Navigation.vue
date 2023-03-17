@@ -5,7 +5,7 @@
       <img src="../assets/alt-school-logo.png" alt="logo"/>
   </div>
   <ul v-show="!mobile" class="navigation">
-      <li @click="toggleNav" :class="{'active': mobileNav}"> <router-link class="link" to="/">Home</router-link></li>
+      <li> <router-link class="link" to="/">Home</router-link></li>
       <li> <router-link class="link" to="/about">About</router-link></li>
       <li><router-link class="link" to="/counter">Counter</router-link></li>
   </ul>
@@ -14,9 +14,9 @@
   </div>
    <transition name="mobile-nav">
       <ul v-show="mobileNav"  class="dropdown-nav ">
-          <li> <router-link class="link" to="/" :class="{'icon-active': mobileNav}">Home</router-link></li>
-      <li> <router-link class="link" to="/about">About</router-link></li>
-      <li><router-link class="link" to="/counter">Counter</router-link></li>
+          <li @click="toggleMobileNav"> <router-link class="link" to="/" :class="{'icon-active': mobileNav}">Home</router-link></li>
+      <li @click="toggleMobileNav"> <router-link class="link" to="/about">About</router-link></li>
+      <li @click="toggleMobileNav"><router-link class="link" to="/counter">Counter</router-link></li>
   </ul> 
   </transition>
 </nav>

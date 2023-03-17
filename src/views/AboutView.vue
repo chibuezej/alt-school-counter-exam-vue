@@ -8,7 +8,8 @@
   
     <h3>A FRONT-<span>END DEVELOPER</span></h3>
     <p class="paragh">Frontend developer with a year experience crafting clean<br/> and functional user interface and web apllication using, <br/>Javascript, React.js, Redux, figma, css/scss, bootsrap, Tailwind, Vue.js. <br/>I am commited to writing clean, scalable and re-usable code.</p>
-    <button class="btn">Check Portfolio</button>
+    <a href="https://my-portfolio-with-animation.netlify.app/"> <button class="btn">Check Portfolio</button></a>
+
     </div>
    <div class="left"> 
     <img src="../assets/meriles.png" alt="Henry" class="img"/>
