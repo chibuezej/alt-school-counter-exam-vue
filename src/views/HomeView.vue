@@ -2,10 +2,10 @@
    <div class="home">
     <section class="hero">
       <div class="hero-text container">
-        <h4>Vue Responsive Counter</h4>
+        <h4><span>Vue </span>Responsive Counter</h4>
         <hr />
         <h2>
-          Alt School <br />
+          Alt <span>School </span><br />
         Examination
         </h2>
         <hr />
@@ -44,6 +44,9 @@ export default {
     height: 100%;
     width: 100%;
   }
+  span{
+    color: #00afea;
+  }
   .hero-text {
     height: 100%;
     display: flex;
@@ -80,19 +83,26 @@ export default {
   text-align: center;
   top: 0;
 
-  button{
-    font-size: 2rem;
-    width: 200px;
-    height: 80px;
-    border-radius: 50px;
-    margin: 30px 0px;
+    button{
+        color: #fff;
+        border: 1px solid #00afea;
+        border-radius: 5px;
+     font-size: 20px;
+    margin: 30px auto;
+    padding: 10px 20px;
+     background: none;
+    cursor: pointer;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+
     &:hover{
-      cursor: pointer;
-      background-color: #00afea;
-    }
-    @media (max-width: 1450px) {
-      width: 150px;
-    border-radius: 25px;
+      color: #00afea;
+     }
+  
+    @media (max-width: 550px) {
+    
+  font-size: 15px;
     }
   }
 }

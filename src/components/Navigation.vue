@@ -5,7 +5,7 @@
       <img src="../assets/alt-school-logo.png" alt="logo"/>
   </div>
   <ul v-show="!mobile" class="navigation">
-      <li> <router-link class="link" to="/">Home</router-link></li>
+      <li @click="toggleNav" :class="{'active': mobileNav}"> <router-link class="link" to="/">Home</router-link></li>
       <li> <router-link class="link" to="/about">About</router-link></li>
       <li><router-link class="link" to="/counter">Counter</router-link></li>
   </ul>
@@ -13,8 +13,8 @@
       <i @click="toggleMobileNav" v-show="mobile" class="far fa-bars" :class="{'icon-active': mobileNav}"></i>
   </div>
    <transition name="mobile-nav">
-      <ul v-show="mobileNav" class="dropdown-nav">
-          <li> <router-link class="link" to="/">Home</router-link></li>
+      <ul v-show="mobileNav"  class="dropdown-nav ">
+          <li> <router-link class="link" to="/" :class="{'icon-active': mobileNav}">Home</router-link></li>
       <li> <router-link class="link" to="/about">About</router-link></li>
       <li><router-link class="link" to="/counter">Counter</router-link></li>
   </ul> 
@@ -46,6 +46,9 @@ window.addEventListener("resize", this.updateScroll);
 methods: {
   toggleMobileNav(){
       this.mobileNav = !this.mobileNav;
+  },
+  toggleNav(){
+  this.mobileNav = !this.mobileNav;
   },
   updateScroll(){
       const scrollPosition = window.scrollY;
@@ -87,8 +90,9 @@ nav {
   transition: .5s ease all;
   width: 90%;
   margin: 0 auto;
-  @media(min-width: 1140px){
+  @media(max-width: 1140px){
       max-width: 1140px;
+      
   }
 
   ul, 

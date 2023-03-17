@@ -1,40 +1,45 @@
 <template>
     <section>
       <div class="counter">
-          <h1 class="header">Counter: {{ counter }}</h1>
+        <div class="input-wrapper"> 
+          <input class="input-field" type="number" v-model="value" />
+      <input
+        class="submit"
+        type="submit"
+        @click="setValue(value)"
+        value="Set Value"
+      />
+        </div>
+       
+          <h1 class="header">Counter: {{ count }}</h1>
           <div class="button">
-            <button class="btn1" id="increament" @click="increament">Increasement</button>
-          <button class="btn2"  id="decreament" @click="decreament">Decrement</button>
+            <button class="btn1" id="decreament" @click="decrement">Decrement</button>
+          <button class="btn2"  id="increament" @click="increment">Increment</button>
           </div>
           <button class="reset" @click="reset">Reset</button>
+
       </div>
     </section>
   </template>
 
   <script>
+import useCounter from "../composable/counterFunc";
+
 
 export default {
  name: 'Counter', 
- 
- computed: {
-  counter(){
-    return this.$store.getters.counter
-  }
-},
-methods:{
-    increament()
-    {
-        this.$store.dispatch('increament')
-    },
-    decreament(){
-        this.$store.dispatch('decreament')
-    },
-    reset(){
-        this.$store.dispatch('reset')
-    },
-   
-}
-}
+ setup() {
+    const { count, increment, decrement, reset, setValue } = useCounter();
+    return {
+      count,
+      increment,
+      decrement,
+      reset,
+      setValue,
+      value: 0,
+    };
+  },
+};
 
 </script>
 
@@ -68,6 +73,54 @@ section{
         margin: auto;
         overflow: hidden;
       }
+  }
+  .input-wrapper{
+    display: grid;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    
+
+    .input-field{
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: auto;
+      margin: auto;
+      border: 5px solid #fff;
+      border-radius:5px ;
+      font-family: inherit;
+      font-size: inherit;
+      color: #fff;
+      outline: none;
+      padding: 1rem;
+      background: none;
+
+      &:hover{
+        border-color: blue;
+      }
+      &:focus{
+        border-color: #00afea;
+      }
+     
+    }
+    .submit{
+      left: 1rem;
+      top: 0.8rem;
+      padding: 1rem;
+      color: #000;
+      background-color: #00afea;
+      cursor: pointer;
+
+      &:hover{
+        background-color: blue;
+      }
+      &:focus{
+        background-color: #00afea;
+      }
+    }
   }
   h1{
     color: #fff;

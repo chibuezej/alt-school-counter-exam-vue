@@ -8,7 +8,7 @@
   
     <h3>A FRONT-<span>END DEVELOPER</span></h3>
     <p class="paragh">Frontend developer with a year experience crafting clean<br/> and functional user interface and web apllication using, <br/>Javascript, React.js, Redux, figma, css/scss, bootsrap, Tailwind, Vue.js. <br/>I am commited to writing clean, scalable and re-usable code.</p>
-    <button>Check Portfolio</button>
+    <button class="btn">Check Portfolio</button>
     </div>
    <div class="left"> 
     <img src="../assets/meriles.png" alt="Henry" class="img"/>
@@ -66,20 +66,25 @@ name: 'About',
     }
   }
       button{
-      cursor: pointer;
-    font-size: 2rem;
-    width: 200px;
-    height: 80px;
-    border-radius: 50px;
-    margin: 30px 0px;
-     &:hover{
-      background-color: #00afea;
+        color: #fff;
+        border: 1px solid #00afea;
+        border-radius: 5px;
+     font-size: 20px;
+    margin: 30px auto;
+    padding: 10px 20px;
+     background: none;
+    cursor: pointer;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+
+    &:hover{
+      color: #00afea;
      }
-    @media (max-width: 1450px) {
-      width: 100px;
-      font-size: 2em;
-      margin: 10px 0;
-    border-radius: 25px;
+  
+    @media (max-width: 550px) {
+    
+  font-size: 15px;
     }
   }
     }
@@ -91,7 +96,7 @@ name: 'About',
       text-transform: uppercase;
       font-size: 30px;
       margin: 10px auto;
-      @media (max-width: 1450px) {
+      @media (max-width: 550px) {
         font-size: 15px;
       }
     }
@@ -124,10 +129,10 @@ name: 'About',
       white-space: nowrap;
       overflow: hidden;
       animation: typing 2s steps(19), cursor .4s step-end infinite alternate;
-        @media (max-width: 650px) {
-      font-size: 10px;
+        @media (max-width: 550px) {
+      font-size: 15px;
       letter-spacing: 4px;
-
+      margin: auto;
      padding: auto;
     }
     }

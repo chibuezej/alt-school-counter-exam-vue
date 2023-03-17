@@ -1,43 +1,47 @@
 import {createStore} from "vuex"
 
+
 const store = createStore({
-    state:{
-        count:0,
-        inputValue: "",
+    state: {
+        count:0
+
     },
-    getters:{
-        counter(state){
-            return state.count;
-        },
-            getInputValue(state){
-                return state.inputValue;
-            }
-        
+    getters: {
+    counter(state) {
+        return state.count;
+        }
     },
-    actions:{
-        increament({commit}){
-            commit('increament')
+    actions: {
+        increment({commit}) {
+            commit('increment');
         },
-        decreament({commit}){
-            commit('decreament')
+        decrement({commit}) {
+            commit('decrement');
         },
-        reset({commit}){
-            commit('reset')
+        reset({commit}) {
+            commit('reset');
         },
-      
+        setValue({commit}, value) {
+            commit('setValue', value);
+        },
+    
     },
-    mutations:{
-        increament(state){
-            state.count++
+    mutations: {
+        increment(state) {
+            state.count++;
         },
-        decreament(state){
-            state.count--
+        decrement(state) {
+            state.count--;
         },
-        reset(state){
+        reset(state) {
             state.count = 0;
+        },
+        setValue(state, value) {
+            state.count = value;
         },
     
     }
+
 })
 
 export default store;
